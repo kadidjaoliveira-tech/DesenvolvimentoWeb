@@ -8,8 +8,6 @@ Construir e corrigir uma página web aplicando:
 - Acessibilidade (WCAG / eMAG)  
 - Estrutura correta para SEO  
 
----
-
 # Parte 1 — Construção da Página
 
 ## 📝 Tarefa
@@ -23,8 +21,6 @@ Criar uma página HTML contendo:
 - `<aside>` com conteúdo complementar  
 - `<footer>` com informações da aula  
 
----
-
 ## ⚠️ Requisitos obrigatórios
 
 - Apenas **1 `<h1>` por página**
@@ -33,8 +29,6 @@ Criar uma página HTML contendo:
 - Uso de `<label>` associado a inputs
 - Navegação acessível por teclado (Tab)
 - Contraste adequado de cores
-
----
 
 # Parte 2 — Exercício de Correção (Debug)
 
