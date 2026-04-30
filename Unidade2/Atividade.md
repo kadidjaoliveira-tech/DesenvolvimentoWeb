@@ -1,6 +1,6 @@
-# 🧪 Atividade Prática — HTML Semântico e Acessibilidade
+# Atividade Prática — HTML Semântico e Acessibilidade
 
-## 🎯 Objetivo
+## Objetivo
 
 Construir e corrigir uma página web aplicando:
 
@@ -10,7 +10,7 @@ Construir e corrigir uma página web aplicando:
 
 ---
 
-# 📌 Parte 1 — Construção da Página
+# Parte 1 — Construção da Página
 
 ## 📝 Tarefa
 
@@ -36,7 +36,7 @@ Criar uma página HTML contendo:
 
 ---
 
-# 🧩 Parte 2 — Exercício de Correção (Debug)
+# Parte 2 — Exercício de Correção (Debug)
 
 ## 💻 Código com erros
 
