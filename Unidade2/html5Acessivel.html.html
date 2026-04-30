@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML semântico e acessibilidade</title>
+
+    <style>
+        :root {
+            --roxo-escuro: #43054e;
+            --roxo: #662c92;
+            --lilas: #bf0087;
+            --magenta: #ec0089;
+            --amarelo: #fde100;
+            --branco: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--branco);
+            color: var(--roxo-escuro);
+            line-height: 1.6;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            top: 0;
+            background: var(--amarelo);
+            color: black;
+            padding: 8px;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            left: 10px;
+            top: 10px;
+        }
+
+        header, footer {
+            background: var(--roxo-escuro);
+            color: white;
+            padding: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--amarelo);
+            text-decoration: none;
+        }
+
+        nav a:focus, nav a:hover {
+            text-decoration: underline;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        section, article, aside {
+            background: #fafafa;
+            padding: 1rem;
+            border-left: 6px solid var(--roxo);
+        }
+
+        h2 { color: var(--roxo); }
+        h3 { color: var(--lilas); }
+
+        a:focus {
+            outline: 3px solid var(--amarelo);
+        }
+
+        /* Formulário */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea {
+            padding: 8px;
+            border: 2px solid var(--roxo);
+            border-radius: 4px;
+        }
+
+        input:focus, textarea:focus {
+            outline: 3px solid var(--amarelo);
+        }
+
+        .erro {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        .sucesso {
+            color: green;
+            font-weight: bold;
+        }
+
+        button {
+            background: var(--roxo);
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--magenta);
+        }
+
+        aside {
+            background: #f3e8f7;
+        }
+
+        footer {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
+
+<header>
+    <h1>Tema da aula: HTML semântico e acessibilidade</h1>
+
+    <nav aria-label="Menu principal">
+        <ul>
+            <li><a href="#semantico">Semântico</a></li>
+            <li><a href="#estrutura">Estrutura</a></li>
+            <li><a href="#acessibilidade">Acessibilidade</a></li>
+            <li><a href="#seo">SEO</a></li>
+            <li><a href="#pratica">Prática</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="layout">
+
+<main id="conteudo">
+
+    <article>
+        <p>
+            Esta unidade aborda a construção de páginas com HTML semântico,
+            garantindo acessibilidade e melhor indexação por mecanismos de busca.
+        </p>
+    </article>
+
+    <section id="semantico">
+        <h2>1. O que é HTML Semântico?</h2>
+
+        <p>
+            É o uso de tags que descrevem o significado do conteúdo, e não apenas sua aparência.
+        </p>
+
+        <ul>
+            <li><strong>Não semânticas:</strong> div, span</li>
+            <li><strong>Semânticas:</strong> header, nav, main, article, section, aside, footer</li>
+        </ul>
+
+        <h3>Vantagens</h3>
+        <ul>
+            <li>Acessibilidade para leitores de tela</li>
+            <li>Melhor SEO</li>
+            <li>Código mais organizado</li>
+        </ul>
+
+        <p><strong>Atividade:</strong> Pesquise exemplos reais de HTML semântico.</p>
+    </section>
+
+    <section id="estrutura">
+        <h2>2. Estruturação Correta</h2>
+
+<pre><code>
+header
+ nav
+main
+ article
+ aside
+footer
+</code></pre>
+
+        <ul>
+            <li>Use apenas um h1</li>
+            <li>Use main como conteúdo principal</li>
+            <li>Use section para agrupar conteúdos</li>
+        </ul>
+
+        <p><strong>Atividade:</strong> Pesquise modelos de estrutura HTML5.</p>
+    </section>
+
+    <section id="acessibilidade">
+        <h2>3. Acessibilidade</h2>
+
+        <ul>
+            <li>Imagens com alt</li>
+            <li>Label associado a inputs</li>
+            <li>Contraste adequado</li>
+            <li>Navegação por teclado</li>
+            <li>Uso consciente de ARIA</li>
+        </ul>
+
+        <p><strong>Atividade:</strong> Pesquise WCAG, eMAG e ferramentas de acessibilidade.</p>
+    </section>
+
+    <section id="seo">
+        <h2>4. SEO e Semântica</h2>
+
+        <ul>
+            <li>Uso correto de headings</li>
+            <li>Estrutura lógica do conteúdo</li>
+            <li>Tags semânticas ajudam buscadores</li>
+        </ul>
+
+        <p><strong>Atividade:</strong> Pesquise como o Google interpreta HTML semântico.</p>
+    </section>
+
+    <section id="pratica">
+        <h2>5. Prática</h2>
+
+        <ul>
+            <li>Criar página semântica</li>
+            <li>Adicionar acessibilidade</li>
+            <li>Validar código</li>
+        </ul>
+
+        <p><strong>Atividade:</strong> Pesquise ferramentas de validação e auditoria.</p>
+    </section>
+
+    <section>
+        <h2>Formulário Acessível</h2>
+
+        <form id="form" novalidate>
+            <div>
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" required aria-describedby="erro-nome">
+                <span id="erro-nome" class="erro" aria-live="polite"></span>
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" required aria-describedby="erro-email">
+                <span id="erro-email" class="erro" aria-live="polite"></span>
+            </div>
+
+            <button type="submit">Enviar</button>
+            <p id="mensagem" class="sucesso" aria-live="polite"></p>
+        </form>
+    </section>
+
+</main>
+
+<aside>
+    <h3>Desafio</h3>
+    <p>
+        Navegue nesta página usando apenas o teclado (tecla Tab) e observe a ordem de foco.
+    </p>
+</aside>
+
+</div>
+
+<footer>
+    <p>Aula 30/04 _ Profª Kadidja Valéria | Engenharia de Software | Desenvolvimento Web (com padrões de qualidade)</p>
+</footer>
+
+<script>
+    const form = document.getElementById('form');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        let valido = true;
+
+        const nome = document.getElementById('nome');
+        const email = document.getElementById('email');
+
+        const erroNome = document.getElementById('erro-nome');
+        const erroEmail = document.getElementById('erro-email');
+        const mensagem = document.getElementById('mensagem');
+
+        erroNome.textContent = '';
+        erroEmail.textContent = '';
+        mensagem.textContent = '';
+
+        if (!nome.value) {
+            erroNome.textContent = 'Informe seu nome';
+            valido = false;
+        }
+
+        if (!email.value) {
+            erroEmail.textContent = 'Informe seu email';
+            valido = false;
+        }
+
+        if (valido) {
+            mensagem.textContent = 'Formulário enviado com sucesso!';
+            form.reset();
+        }
+    });
+</script>
+
+</body>
+</html>
